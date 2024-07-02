@@ -80,19 +80,13 @@ def read_csv_with_filter(file_path, filter_criteria, page_number=1, page_size=50
         return page_rows
 
 # Usage:
-file_path = "#add csv file path"
-filter_criteria = "add query here"
+file_path = "path/to/your/file.csv"
+filter_criteria = '((major == "Engineering") and (age != 45)) or (tuition_fee <= 60000)'
 page_number = 1
 page_size = 50
 
 rows = read_csv_with_filter(file_path, filter_criteria, page_number, page_size)
+print("Filtered Rows:")
 for row in rows:
     print(row)
 
-
-filter_criteria = '((major == "Engineering") and (age != 45)) or (tuition_fee <= 60000)'
-rows = read_csv_with_filter(file_path, filter_criteria, page_number, page_size)
-print("Complex Nested Conditions:")
-for row in rows:
-    print(row)
-print()
